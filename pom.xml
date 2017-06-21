@@ -7,13 +7,14 @@
 
 	<packaging>jar</packaging>
 	<name>SDCTest</name>
-
+	<!-- 组件版本 -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<CMH-spark.version>1.5.2-bc1.3.2</CMH-spark.version>
 		<CMH-hadoop.version>2.6.0-bc1.3.2</CMH-hadoop.version>
 	</properties>
-
+	
+	<!-- mvn 地址 -->
 	<repositories>
 		<repository>
 			<id>archiva.external</id>
