@@ -19,6 +19,8 @@ public class HdfsToHive {
 		HiveContext hc = new HiveContext(jsc.sc());
 
 		//要指定hdfs路径
+//		JavaRDD<String> lines = jsc.textFile("hdfs://cztcluster/user/edc_yz_safety/persons.txt");
+		
 		JavaRDD<String> lines = jsc.textFile("persons.txt");
 
 		JavaRDD<Person> persons = lines.map(new Function<String, Person>() {
@@ -39,7 +41,7 @@ public class HdfsToHive {
 		
         df.registerTempTable("person_tmp");
         
-		String sql = "insert into person select id , name , age from person_tmp";
+		String sql = "insert into table yz_test.person select id , name , age from person_tmp";
 		
 		hc.sql(sql);
 
